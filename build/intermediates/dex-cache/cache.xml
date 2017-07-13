@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/denglizhong/.gradle/caches/modules-2/files-2.1/org.greenrobot/eventbus/3.0.0/ddd99896e9569eaababbe81b35d80e1b91c4ad85/eventbus-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
+        <dex dex="/Users/denglizhong/Documents/Job/gitrepo/AeolusbotUnitFuncTestTool/app/build/intermediates/pre-dexed/debug/eventbus-3.0.0_954974737d3aaa0c0c34357f159dd54fe5b1165f.jar" />
+    </item>
+
+</items>

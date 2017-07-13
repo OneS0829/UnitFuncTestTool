@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.aeolusbot.app.aeolusbotunitfunctesttool.MapTouchActivity">
+
+    <EditText
+        android:id="@+id/addressEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="ws://192.168.5.89:9090"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="40dp" />
+
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="32dp"
+        android:text="Connect"
+        android:onClick="onConnect"
+        app:layout_constraintLeft_toRightOf="@+id/addressEditText"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="11dp"
+        android:visibility="visible"/>
+
+    <Button
+        android:id="@+id/disconnectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="32dp"
+        android:text="Disconnect"
+        android:onClick="onDisConnect"
+        app:layout_constraintLeft_toRightOf="@+id/connectButton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="10dp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/logTextView"
+        android:layout_width="646dp"
+        android:layout_height="482dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="49dp"
+        android:background="@android:color/background_dark"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressEditText"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        app:layout_constraintLeft_toRightOf="@+id/logTextView"
+        android:layout_marginLeft="27dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="124dp" />
+
+
+</android.support.constraint.ConstraintLayout>
