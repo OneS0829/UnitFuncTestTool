@@ -36,7 +36,7 @@
         android:id="@+id/disconnectButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="103dp"
         android:layout_marginTop="32dp"
         android:text="Disconnect"
         android:onClick="onDisConnect"

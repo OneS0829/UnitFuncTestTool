@@ -5,12 +5,11 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -113,7 +112,6 @@ public class MapTouchActivity extends AppCompatActivity {
 
                     if(mapBitmap != null && targetBitmap != null) {
                         runOnUiThread(new Runnable() {
-                            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                             @Override
                             public void run() {
                                 //Log.d(TAG, msg.toString());
@@ -130,6 +128,8 @@ public class MapTouchActivity extends AppCompatActivity {
                 }
             }
         });
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
     @Override
@@ -139,12 +139,7 @@ public class MapTouchActivity extends AppCompatActivity {
         String subDetailName = "/map";
         String subDetailNameTwo = "/move_base/global_costmap/footprint";
 
-        mapThread.interrupt();
-        if(webSocketClient.isConnecting()) {
-            webSocketClient.send("{\"op\":\"unsubscribe\",\"topic\":\"" + subDetailName + "\"}");
-            webSocketClient.send("{\"op\":\"unsubscribe\",\"topic\":\"" + subDetailNameTwo + "\"}");
-            webSocketClient.close();
-        }
+        if(mapThread != null) mapThread.interrupt();
     }
 
 
@@ -152,11 +147,10 @@ public class MapTouchActivity extends AppCompatActivity {
         String subDetailName = "/map";
         String subDetailNameTwo = "/move_base/global_costmap/footprint";
 
-        if(webSocketClient.isConnecting()) {
             webSocketClient.send("{\"op\":\"unsubscribe\",\"topic\":\"" + subDetailName + "\"}");
             webSocketClient.send("{\"op\":\"unsubscribe\",\"topic\":\"" + subDetailNameTwo + "\"}");
             webSocketClient.close();
-        }
+
 
         disConnectButton.setVisibility(View.INVISIBLE);
         connectButton.setVisibility(View.VISIBLE);

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.aeolusbot.app.aeolusbotunitfunctesttool.TurtleControllerActivity">
+
+    <EditText
+        android:id="@+id/addressEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="ws://192.168.5.89:9090"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="40dp" />
+
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="32dp"
+        android:text="Connect"
+        android:onClick="onConnect"
+        app:layout_constraintLeft_toRightOf="@+id/addressEditText"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="11dp"
+        android:visibility="visible"/>
+
+    <Button
+        android:id="@+id/disconnectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="32dp"
+        android:text="Disconnect"
+        android:onClick="onDisConnect"
+        app:layout_constraintLeft_toRightOf="@+id/connectButton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="10dp"
+        android:visibility="invisible"/>
+
+    <WebView
+        android:id="@+id/myWebView"
+        android:layout_width="860dp"
+        android:layout_height="487dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <GridLayout
+        android:id="@+id/controllerGridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="81dp"
+        android:layout_marginTop="290dp"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        android:rowCount="3"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@+id/myWebView"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/upButton"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_row="0"
+            android:onClick="onMove"
+            android:text="Up" />
+
+
+        <Button
+            android:id="@+id/leftButton"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_row="1"
+            android:onClick="onMove"
+            android:text="Left" />
+
+
+        <Button
+            android:id="@+id/rightButton"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_row="1"
+            android:onClick="onMove"
+            android:text="Right" />
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_row="2"
+            android:onClick="onReset"
+            android:text="Reset" />
+
+
+        <Button
+            android:id="@+id/downButton"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_row="2"
+            android:onClick="onMove"
+            android:text="Down" />
+
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_row="2"
+            android:onClick="onClear"
+            android:text="Clear" />
+
+    </GridLayout>
+
+
+</android.support.constraint.ConstraintLayout>

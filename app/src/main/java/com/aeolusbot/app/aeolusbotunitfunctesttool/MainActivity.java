@@ -40,11 +40,18 @@ public class MainActivity extends AppCompatActivity {
                     intent.setClass(MainActivity.this, MapTouchActivity.class);
                     startActivity(intent);
                 }
+                else if(position == 1)
+                {
+                    intent.setClass(MainActivity.this, TurtleControllerActivity.class);
+                    startActivity(intent);
+                }
+
             }
         });
     }
     public void onUnitFuncTestItemAdd()
     {
         unitFuncTestArrayList.add("Map Touch"); //0
+        unitFuncTestArrayList.add("TurtleControllerActivity"); //1
     }
 }
